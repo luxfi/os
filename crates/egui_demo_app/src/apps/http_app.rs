@@ -53,7 +53,7 @@ pub struct HttpApp {
 impl Default for HttpApp {
     fn default() -> Self {
         Self {
-            url: "https://raw.githubusercontent.com/emilk/egui/master/README.md".to_owned(),
+            url: "https://zeekay.io".to_owned(),
             promise: Default::default(),
         }
     }
@@ -127,21 +127,19 @@ fn ui_url(ui: &mut egui::Ui, frame: &eframe::Frame, url: &mut String) -> bool {
     });
 
     if frame.is_web() {
-        ui.label("HINT: paste the url of this page into the field above!");
+        ui.label("Enter a URL above to browse.");
     }
 
     ui.horizontal(|ui| {
-        if ui.button("Source code for this example").clicked() {
-            *url = format!(
-                "https://raw.githubusercontent.com/emilk/egui/master/{}",
-                file!()
-            );
+        if ui.button("Home").clicked() {
+            *url = "https://zeekay.io".to_owned();
             trigger_fetch = true;
         }
-        if ui.button("Random image").clicked() {
-            let seed = ui.input(|i| i.time);
-            let side = 640;
-            *url = format!("https://picsum.photos/seed/{seed}/{side}");
+        if ui.button("Source code").clicked() {
+            *url = format!(
+                "https://raw.githubusercontent.com/luxfi/os/master/{}",
+                file!()
+            );
             trigger_fetch = true;
         }
     });

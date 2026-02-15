@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
 <head>
-    <title>egui – An immediate mode GUI written in Rust</title>
+    <title>zOS – LuxOS Desktop</title>
     <style>
         html {
             /* Remove touch delay: */
@@ -137,7 +137,7 @@
 
             function check_for_panic() {
                 if (handle.has_panicked()) {
-                    console.error("The egui app has crashed");
+                    console.error("zOS has crashed");
 
                     // The demo app already logs the panic message and callstack, but you
                     // can access them like this if you want to show them in the html:
@@ -147,7 +147,7 @@
                     document.getElementById("the_canvas_id").remove();
                     document.getElementById("center_text").innerHTML = `
                         <p>
-                            The egui app has crashed.
+                            zOS has crashed.
                         </p>
                         <p style="font-size:10px" align="left">
                             ${handle.panic_message()}
@@ -199,4 +199,4 @@
 
 </html>
 
-<!-- Powered by egui: https://github.com/emilk/egui/ -->
+<!-- zOS: https://github.com/luxfi/os -->
