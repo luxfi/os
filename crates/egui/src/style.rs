@@ -848,7 +848,7 @@ pub struct TextCursorStyle {
 impl Default for TextCursorStyle {
     fn default() -> Self {
         Self {
-            stroke: Stroke::new(2.0, Color32::from_rgb(192, 222, 255)), // Dark mode
+            stroke: Stroke::new(2.0, Color32::from_gray(200)), // Monochromatic
             preview: false,
             blink: true,
             on_duration: 0.5,
@@ -1286,33 +1286,33 @@ impl Visuals {
             override_text_color: None,
             widgets: Widgets::default(),
             selection: Selection::default(),
-            hyperlink_color: Color32::from_rgb(90, 170, 255),
+            hyperlink_color: Color32::from_gray(200),
             faint_bg_color: Color32::from_additive_luminance(5), // visible, but barely so
             extreme_bg_color: Color32::from_gray(10),            // e.g. TextEdit background
             code_bg_color: Color32::from_gray(64),
             warn_fg_color: Color32::from_rgb(255, 143, 0), // orange
             error_fg_color: Color32::from_rgb(255, 0, 0),  // red
 
-            window_rounding: Rounding::same(6.0),
+            window_rounding: Rounding::same(10.0),
             window_shadow: Shadow {
-                offset: vec2(10.0, 20.0),
-                blur: 15.0,
+                offset: vec2(0.0, 8.0),
+                blur: 24.0,
                 spread: 0.0,
-                color: Color32::from_black_alpha(96),
+                color: Color32::from_black_alpha(60),
             },
-            window_fill: Color32::from_gray(27),
-            window_stroke: Stroke::new(1.0, Color32::from_gray(60)),
+            window_fill: Color32::from_rgba_premultiplied(20, 20, 20, 230),
+            window_stroke: Stroke::new(1.0, Color32::from_gray(50)),
             window_highlight_topmost: true,
 
-            menu_rounding: Rounding::same(6.0),
+            menu_rounding: Rounding::same(10.0),
 
-            panel_fill: Color32::from_gray(27),
+            panel_fill: Color32::from_rgba_premultiplied(18, 18, 18, 240),
 
             popup_shadow: Shadow {
-                offset: vec2(6.0, 10.0),
-                blur: 8.0,
+                offset: vec2(0.0, 4.0),
+                blur: 16.0,
                 spread: 0.0,
-                color: Color32::from_black_alpha(96),
+                color: Color32::from_black_alpha(50),
             },
 
             resize_corner_size: 12.0,
@@ -1343,7 +1343,7 @@ impl Visuals {
             dark_mode: false,
             widgets: Widgets::light(),
             selection: Selection::light(),
-            hyperlink_color: Color32::from_rgb(0, 155, 255),
+            hyperlink_color: Color32::from_gray(60),
             faint_bg_color: Color32::from_additive_luminance(5), // visible, but barely so
             extreme_bg_color: Color32::from_gray(255),           // e.g. TextEdit background
             code_bg_color: Color32::from_gray(230),
@@ -1351,25 +1351,25 @@ impl Visuals {
             error_fg_color: Color32::from_rgb(255, 0, 0),  // red
 
             window_shadow: Shadow {
-                offset: vec2(10.0, 20.0),
-                blur: 15.0,
+                offset: vec2(0.0, 8.0),
+                blur: 24.0,
                 spread: 0.0,
-                color: Color32::from_black_alpha(25),
+                color: Color32::from_black_alpha(18),
             },
-            window_fill: Color32::from_gray(248),
-            window_stroke: Stroke::new(1.0, Color32::from_gray(190)),
+            window_fill: Color32::from_rgba_premultiplied(245, 245, 245, 230),
+            window_stroke: Stroke::new(1.0, Color32::from_gray(180)),
 
-            panel_fill: Color32::from_gray(248),
+            panel_fill: Color32::from_rgba_premultiplied(242, 242, 242, 240),
 
             popup_shadow: Shadow {
-                offset: vec2(6.0, 10.0),
-                blur: 8.0,
+                offset: vec2(0.0, 4.0),
+                blur: 16.0,
                 spread: 0.0,
-                color: Color32::from_black_alpha(25),
+                color: Color32::from_black_alpha(18),
             },
 
             text_cursor: TextCursorStyle {
-                stroke: Stroke::new(2.0, Color32::from_rgb(0, 83, 125)),
+                stroke: Stroke::new(2.0, Color32::from_gray(60)),
                 ..Default::default()
             },
 
@@ -1387,15 +1387,15 @@ impl Default for Visuals {
 impl Selection {
     fn dark() -> Self {
         Self {
-            bg_fill: Color32::from_rgb(0, 92, 128),
-            stroke: Stroke::new(1.0, Color32::from_rgb(192, 222, 255)),
+            bg_fill: Color32::from_gray(55),
+            stroke: Stroke::new(1.0, Color32::from_gray(180)),
         }
     }
 
     fn light() -> Self {
         Self {
-            bg_fill: Color32::from_rgb(144, 209, 255),
-            stroke: Stroke::new(1.0, Color32::from_rgb(0, 83, 125)),
+            bg_fill: Color32::from_gray(200),
+            stroke: Stroke::new(1.0, Color32::from_gray(60)),
         }
     }
 }
