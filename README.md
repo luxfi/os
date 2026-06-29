@@ -1,3 +1,5 @@
+<p align="center"><img src=".github/hero.svg" alt="os" width="880"></p>
+
 # 🖌 egui: an easy-to-use GUI in pure Rust
 
 [<img alt="github" src="https://img.shields.io/badge/github-emilk/egui-8da0cb?logo=github" height="20">](https://github.com/emilk/egui)
